@@ -6,11 +6,13 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
 
     private CharacterController characterController;
+    private Animator animator;
     private Vector3 velocity;
 
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     public void Move(Vector2 input)
@@ -25,6 +27,7 @@ public class MovementController : MonoBehaviour
 
         Vector3 moveDirection = forward * input.y + right * input.x;
         characterController.Move(speed * Time.deltaTime * moveDirection);
+        animator.SetFloat("Speed", moveDirection.magnitude);
 
         RotateTowards(moveDirection);
         ApplyGravity();
