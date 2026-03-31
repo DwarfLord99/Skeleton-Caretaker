@@ -390,6 +390,37 @@ Transform:
   - {fileID: 8860880518721971076}
   m_Father: {fileID: 1024881733729872418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1184416342728323019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1763799212272815504}
+  m_Layer: 0
+  m_Name: LookDirection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1763799212272815504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184416342728323019}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 5.64642e-23, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3771449784688515609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1242157239374945578
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +433,7 @@ GameObject:
   - component: {fileID: 4765383955781789910}
   - component: {fileID: 7319370375668096168}
   - component: {fileID: 7466142277284166245}
+  - component: {fileID: 4096539637821789760}
   - component: {fileID: 8134579339417327079}
   m_Layer: 0
   m_Name: PLAYER
@@ -486,6 +518,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd93977de2f0dcc47a2c6c1965c38f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!114 &4096539637821789760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242157239374945578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17913af6421715d4d97f6c3913a10d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionController
+  player: {fileID: 1678582001056970012}
+  lookOrigin: {fileID: 1763799212272815504}
+  interactionRange: 1.2
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!95 &8134579339417327079
 Animator:
   serializedVersion: 7
@@ -1172,6 +1222,7 @@ Transform:
   - {fileID: 4124654688365721465}
   - {fileID: 4105617983869646420}
   - {fileID: 3793997413981346510}
+  - {fileID: 1763799212272815504}
   m_Father: {fileID: 3463852849405162097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6689018887498169376

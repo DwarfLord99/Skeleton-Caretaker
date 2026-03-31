@@ -12,4 +12,6 @@ public class WorkstationController : MonoBehaviour, IInteractable
     {
         return InteractableType.Workstation;
     }
+
+    public string InteractionMessage => "Press 'E' to use";
 }
