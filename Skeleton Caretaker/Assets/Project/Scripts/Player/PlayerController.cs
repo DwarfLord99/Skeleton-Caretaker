@@ -35,10 +35,27 @@ public class PlayerController : MonoBehaviour
 
     void HandleInteract()
     {
-        // Handle player interaction logic here
-        if (interactAction.WasPressedThisFrame())
+        var target = interaction.CurrentTarget;
+
+        if (target == null)
         {
-            interaction.TryInteract();
+            interaction.StopInteract();
+            return;
+        }
+
+        if (target.RequiresHold)
+        {
+            // Hold-to-interact logic
+            if (interactAction.IsPressed())
+                interaction.TryInteract();
+            else
+                interaction.StopInteract();
+        }
+        else
+        {
+            // Tap-to-interact logic
+            if (interactAction.WasPressedThisFrame())
+                interaction.TryInteract();
         }
     }
 }

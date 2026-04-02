@@ -54,7 +54,7 @@ public class InteractionController : MonoBehaviour
                 }
                 if (outline != null)
                 {
-                    outline.EnableOutline();
+                    outline.EnableOutline(CurrentTarget.OutlineColor);
                 }
                 currentOutline = outline;
             }
@@ -80,6 +80,11 @@ public class InteractionController : MonoBehaviour
     public void TryInteract()
     {
         CurrentTarget?.Interact();
+    }
+
+    public void StopInteract()
+    {
+        CurrentTarget?.StopInteract();
     }
 
     private void OnDrawGizmos()

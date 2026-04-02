@@ -11,8 +11,9 @@ public class OutlineController : MonoBehaviour
         outlineLayer = LayerMask.NameToLayer("Outline");
     }
 
-    public void EnableOutline()
+    public void EnableOutline(Color color)
     {
+        Shader.SetGlobalColor("_OutlineColor", color);
         SetLayerRecursively(outlineLayer);
     }
 
